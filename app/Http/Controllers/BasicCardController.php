@@ -14,8 +14,25 @@ class BasicCardController extends Controller
            $selectData=json_decode($jsonString);
            return view('select',['selectKey'=>$selectData]);    
     }
-    function onInsert(){
-        return view('insert');
+
+ 
+    function onInsert(Request $req){
+
+        $name = $req->input('name');
+        $roll = $req->input('roll');
+        $myClass = $req->input('myclass');
+
+        $result=DB::insert('INSERT INTO `laravelcrud`(`name`, `class`, `roll`) VALUES (?,?,?)',[$name,$roll,$myClass]);
+        
+        $succMsg = 'Data Successfylly Saved';
+        $errMsg = 'Data Successfylly Saved';
+        if($result == true){
+           return "success";
+        }
+        else{
+            return "error";
+        }
+        
     }
     function onUpdate(){
         return view('select');

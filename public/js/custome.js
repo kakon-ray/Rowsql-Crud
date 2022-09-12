@@ -4,15 +4,15 @@ function sendData() {
     var myclass = document.getElementById("myclass").value;
 
     axios
-        .post("/insert", {
+        .post("/insert-data", {
             name: name,
             roll: roll,
             myclass: myclass,
         })
         .then(function (response) {
-            console.log(response);
+            alert(response.data);
         })
         .catch(function (error) {
-            console.log(error);
+            alert(error);
         });
 }
