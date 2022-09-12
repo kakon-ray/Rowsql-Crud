@@ -37,7 +37,13 @@ class BasicCardController extends Controller
     function onUpdate(){
         return view('select');
     }
-    function onDelete(){
-        return view('delete');
+    function onDelete(Request $req){
+         $id = $req->input('id');
+        $result = DB::delete('DELETE FROM `laravelcrud` WHERE `id`=?',[$id]);
+        if($result == true){
+            return 'sucess';
+        }else{
+            return 'False';
+        }
     }
 }

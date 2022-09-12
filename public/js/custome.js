@@ -16,3 +16,17 @@ function sendData() {
             alert(error);
         });
 }
+function onDelete() {
+    var id = document.getElementById("id").value;
+
+    axios
+        .post("/delete", {
+            id: id,
+        })
+        .then(function (response) {
+            alert(response.data);
+        })
+        .catch(function (error) {
+            alert(error);
+        });
+}
