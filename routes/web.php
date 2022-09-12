@@ -9,9 +9,15 @@ Route::get('/insert', function(){
     return view('insert');
 });
 Route::post('/insert-data',[BasicCardController::class, 'onInsert']);
-Route::get('/update', [BasicCardController::class, 'onUpdate']);
+
 Route::get('/delete-show',function(){
     return view('delete');
 });
 Route::post('/delete', [BasicCardController::class, 'onDelete']);
+
+
+Route::get('/update-show',function(){
+    return view('update');
+});
+Route::post('/updateData', [BasicCardController::class, 'onUpdate']);
 

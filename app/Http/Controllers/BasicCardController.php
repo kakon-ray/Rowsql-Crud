@@ -20,9 +20,9 @@ class BasicCardController extends Controller
 
         $name = $req->input('name');
         $roll = $req->input('roll');
-        $myClass = $req->input('myclass');
+        $class = $req->input('myclass');
 
-        $result=DB::insert('INSERT INTO `laravelcrud`(`name`, `class`, `roll`) VALUES (?,?,?)',[$name,$roll,$myClass]);
+        $result=DB::insert('INSERT INTO `laravelcrud`(`name`, `class`, `roll`) VALUES (?,?,?)',[$name,$roll,$class]);
         
         $succMsg = 'Data Successfylly Saved';
         $errMsg = 'Data Successfylly Saved';
@@ -34,8 +34,20 @@ class BasicCardController extends Controller
         }
         
     }
-    function onUpdate(){
-        return view('select');
+    function onUpdate(Request $req){
+      $name = $req->input('name');
+      $roll = $req->input('roll');
+      $class = $req->input('myclass');
+      $id = $req->input('id');
+ 
+        $result = DB::update('UPDATE `laravelcrud` SET `name`=?,`class`=?,`roll`=? WHERE `id`=?',[$name,$class,$roll,$id]);
+
+        if($result == true){
+            return 'Success';
+
+        }else{
+            return 'Error';
+        }
     }
     function onDelete(Request $req){
          $id = $req->input('id');

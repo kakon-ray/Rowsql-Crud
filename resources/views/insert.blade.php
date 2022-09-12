@@ -15,17 +15,17 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" name="name" id="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="name" id="name" class="form-control"  aria-describedby="emailHelp">
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Roll</label>
-                    <input type="text" name="roll" id="roll"  class="form-control" id="exampleInputPassword1">
+                    <input type="text" name="roll" id="roll"  class="form-control">
                 </div>
 
                  <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Class</label>
-                    <input type="text" name="class" id="myclass"  class="form-control" id="exampleInputPassword1">
+                    <input type="text" name="class" id="myclass"  class="form-control" >
                 </div>
        
                 <button type="submit" class="btn btn-primary" onclick="sendData()">Submit</button>
